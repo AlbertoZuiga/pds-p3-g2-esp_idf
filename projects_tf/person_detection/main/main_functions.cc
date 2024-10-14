@@ -82,12 +82,14 @@ void setup() {
   //
   // tflite::AllOpsResolver resolver;
   // NOLINTNEXTLINE(runtime-global-variables)
-  static tflite::MicroMutableOpResolver<5> micro_op_resolver;
+  static tflite::MicroMutableOpResolver<7> micro_op_resolver;
   micro_op_resolver.AddAveragePool2D();
   micro_op_resolver.AddConv2D();
   micro_op_resolver.AddDepthwiseConv2D();
   micro_op_resolver.AddReshape();
   micro_op_resolver.AddSoftmax();
+  micro_op_resolver.AddMaxPool2D();
+  micro_op_resolver.AddFullyConnected();  // Agregar la operación FullyConnected
 
   // Build an interpreter to run the model with.
   // NOLINTNEXTLINE(runtime-global-variables)
@@ -196,12 +198,27 @@ void run_inference(void *ptr) {
   TfLiteTensor* output = interpreter->output(0);
 
   // Process the inference results.
-  int8_t person_score = output->data.uint8[kPersonIndex];
-  int8_t no_person_score = output->data.uint8[kNotAPersonIndex];
+  int8_t zero_score = output->data.uint8[kZeroIndex];
+  int8_t one_score = output->data.uint8[kOneIndex];
+  int8_t two_score = output->data.uint8[kTwoIndex];
+  int8_t three_score = output->data.uint8[kThreeIndex];
+  int8_t four_score = output->data.uint8[kFourIndex];
+  int8_t five_score = output->data.uint8[kFiveIndex];
+  int8_t blank_score = output->data.uint8[kBlankIndex];
 
-  float person_score_f =
-      (person_score - output->params.zero_point) * output->params.scale;
-  float no_person_score_f =
-      (no_person_score - output->params.zero_point) * output->params.scale;
-  RespondToDetection(person_score_f, no_person_score_f);
+  float zero_score_f =
+      (zero_score - output->params.zero_point) * output->params.scale;
+  float one_score_f =
+      (one_score - output->params.zero_point) * output->params.scale;
+  float two_score_f =
+      (two_score - output->params.zero_point) * output->params.scale;
+  float three_score_f =
+      (three_score - output->params.zero_point) * output->params.scale;
+  float four_score_f =
+      (four_score - output->params.zero_point) * output->params.scale;
+  float five_score_f =
+      (five_score - output->params.zero_point) * output->params.scale;
+  float blank_score_f =
+      (blank_score - output->params.zero_point) * output->params.scale;
+  RespondToDetection(zero_score_f, one_score_f, two_score_f, three_score_f, four_score_f, five_score_f, blank_score_f);
 }

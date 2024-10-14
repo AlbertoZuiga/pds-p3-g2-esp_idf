@@ -27,9 +27,14 @@ constexpr int kNumChannels = 1;
 
 constexpr int kMaxImageSize = kNumCols * kNumRows * kNumChannels;
 
-constexpr int kCategoryCount = 2;
-constexpr int kPersonIndex = 1;
-constexpr int kNotAPersonIndex = 0;
+constexpr int kCategoryCount = 7;
+constexpr int kZeroIndex = 0;
+constexpr int kOneIndex = 1;
+constexpr int kTwoIndex = 2;
+constexpr int kThreeIndex = 3;
+constexpr int kFourIndex = 4;
+constexpr int kFiveIndex = 5;
+constexpr int kBlankIndex = 6;
 extern const char* kCategoryLabels[kCategoryCount];
 
 #endif  // TENSORFLOW_LITE_MICRO_EXAMPLES_PERSON_DETECTION_MODEL_SETTINGS_H_

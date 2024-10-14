@@ -27,6 +27,5 @@ limitations under the License.
 // does not contain a person. Typically if person_score > no person score, the
 // image is considered to contain a person.  This threshold may be adjusted for
 // particular applications.
-void RespondToDetection(float person_score, float no_person_score);
-
+void RespondToDetection(float zero_score, float one_score, float two_score, float three_score, float four_score, float five_score, float blank_score);
 #endif  // TENSORFLOW_LITE_MICRO_EXAMPLES_PERSON_DETECTION_DETECTION_RESPONDER_H_

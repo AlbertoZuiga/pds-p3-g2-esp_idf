@@ -58,9 +58,14 @@ static void create_gui(void)
 }
 #endif // DISPLAY_SUPPORT
 
-void RespondToDetection(float person_score, float no_person_score) {
-  int person_score_int = (person_score) * 100 + 0.5;
-  (void) no_person_score; // unused
+void RespondToDetection(float zero_score, float one_score, float two_score, float three_score, float four_score, float five_score, float blank_score) {
+  int zero_score_int = (zero_score) * 100 + 0.5;
+  int one_score_int = (one_score) * 100 + 0.5;
+  int two_score_int = (two_score) * 100 + 0.5;
+  int three_score_int = (three_score) * 100 + 0.5;
+  int four_score_int = (four_score) * 100 + 0.5;
+  int five_score_int = (five_score) * 100 + 0.5;
+  int blank_score_int = (blank_score) * 100 + 0.5;
 #if DISPLAY_SUPPORT
     if (!camera_canvas) {
       create_gui();
@@ -77,6 +82,5 @@ void RespondToDetection(float person_score, float no_person_score) {
     lv_canvas_set_buffer(camera_canvas, buf, IMG_WD, IMG_HT, LV_IMG_CF_TRUE_COLOR);
     bsp_display_unlock();
 #endif // DISPLAY_SUPPORT
-  MicroPrintf("person score:%d%%, no person score %d%%",
-              person_score_int, 100 - person_score_int);
+  MicroPrintf("zero_score: %d%%\n one_score: %d%%\n two_score: %d%%\n three_score: %d%%\n four_score: %d%%\n five_score: %d%%\n blank_score: %d%%\n", zero_score_int, one_score_int, two_score_int, three_score_int, four_score_int, five_score_int, blank_score_int);
 }
