@@ -1,0 +1,18 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400eb0b8: task_wdt_timeout_handling at /home/gian/esp/idf/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+ (inlined by) task_wdt_isr at /home/gian/esp/idf/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x400843cd: _xt_lowint1 at /home/gian/esp/idf/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400e8573: esp_nn_conv_s8_opt at /home/gian/esp/projects/our_person_detection/managed_components/espressif__esp-nn/src/convolution/esp_nn_conv_opt.c:158
+0x400e1b6d: tflite::(anonymous namespace)::Eval(TfLiteContext*, TfLiteNode*) at /home/gian/esp/projects/our_person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/kernels/esp_nn/conv.cc:250
+ (inlined by) Eval at /home/gian/esp/projects/our_person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/kernels/esp_nn/conv.cc:365
+0x400de00a: tflite::MicroInterpreterGraph::InvokeSubgraph(int) at /home/gian/esp/projects/our_person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_interpreter_graph.cc:194
+0x400ddce6: tflite::MicroInterpreter::Invoke() at /home/gian/esp/projects/our_person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.cc:294
+0x400d9c20: run_inference at /home/gian/esp/projects/our_person_detection/main/main_functions.cc:181
+0x400d9d0f: inference_cli_handler at /home/gian/esp/projects/our_person_detection/main/esp_cli.c:117
+0x400da40f: esp_console_run at /home/gian/esp/idf/esp-idf/components/console/commands.c:257
+0x400da618: esp_console_repl_task at /home/gian/esp/idf/esp-idf/components/console/esp_console_common.c:177
+[0m
+[0m

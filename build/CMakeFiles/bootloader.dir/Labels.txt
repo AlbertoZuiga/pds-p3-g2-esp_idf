@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/gian/esp/projects/our_person_detection/build/CMakeFiles/bootloader
+/home/gian/esp/projects/our_person_detection/build/CMakeFiles/bootloader.rule
+/home/gian/esp/projects/our_person_detection/build/CMakeFiles/bootloader-complete.rule
+/home/gian/esp/projects/our_person_detection/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/gian/esp/projects/our_person_detection/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/gian/esp/projects/our_person_detection/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/gian/esp/projects/our_person_detection/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/gian/esp/projects/our_person_detection/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/gian/esp/projects/our_person_detection/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/gian/esp/projects/our_person_detection/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

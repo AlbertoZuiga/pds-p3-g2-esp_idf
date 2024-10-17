@@ -1,0 +1,12 @@
+file(REMOVE_RECURSE
+  "image0.S"
+  "image1.S"
+  "image2.S"
+  "image3.S"
+  "image4.S"
+  "image5.S"
+  "image6.S"
+  "image7.S"
+  "image8.S"
+  "image9.S"
+)
